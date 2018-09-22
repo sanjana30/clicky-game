@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import Navigationbar from "./components/clicky";
 import Wrapper from "./components/Wrapper";
 import Character from "./components/Character";
 import Characters from "./characters.json";
@@ -20,6 +20,12 @@ class App1 extends React.Component {
         this.setState({char: a});
     };
 
+    handlescore = (id) => {
+        console.log("Id of clicked element: "+id);
+        this.setState({score: this.state.score +1});
+        this.shuffle();
+    }
+
     //shuffledSet = (a)
 
     // handleincrement = (id) => {
@@ -34,6 +40,8 @@ class App1 extends React.Component {
 
     render() {
         return (
+            [
+            <Navigationbar score={this.state.score}/>,
             <Wrapper>
                 {this.state.char.map(character => (
                     <Character 
@@ -43,10 +51,11 @@ class App1 extends React.Component {
                         wand={character.wand}
                         image={character.image}
                         fontcolor={character.color}
-                        changescore={character.handleincrement}
+                        changescore={this.handlescore}
                     />
                 ))}
             </Wrapper>
+            ]
         );
     }
         

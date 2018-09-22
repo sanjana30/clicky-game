@@ -9,10 +9,10 @@ const styles = {
     }
 };
 
-const Navigationbar = () => (<div style={styles.navbar}>
+const Navigationbar = (props) => (<div style={styles.navbar}>
     <nav className="navbar navbar-light " style={styles.navbar}>
         <a className="navbar-brand">Clicky</a>
-        <span style={styles.score}>Score: </span>
+        <span style={styles.score}>Score: {props.score} </span>
     </nav>
 </div>
 );

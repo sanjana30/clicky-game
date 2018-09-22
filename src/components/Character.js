@@ -22,7 +22,7 @@ let Character = (props) => {
                     <br />
                     Wand: <span style={styles.spanstyle}>{props.wand}</span>
                     </p>
-                    <button onClick={props.shuffle}>Click Me</button>
+                    <button onClick={()=>props.changescore(props.id)}>Click Me</button>
                 </div>
         </div>
     )    
