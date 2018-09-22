@@ -1,4 +1,4 @@
-Deployed (Heroku) Link : ## https://young-reef-70639.herokuapp.com
+Deployed (Heroku) Link : https://young-reef-70639.herokuapp.com
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
