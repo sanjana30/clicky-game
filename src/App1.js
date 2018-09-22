@@ -22,23 +22,32 @@ class App1 extends React.Component {
 
     handlescore = (id) => {
         console.log("Id of clicked element: "+id);
+        
         //store the clicked char object in a new var & increase the number of clicks
         let clickedChar = this.state.char.filter(object => object.id === id);
+        console.log("No. of clicks before: "+clickedChar[0].clicks )
         clickedChar[0].clicks = clickedChar[0].clicks +1;
+        console.log("No. of clicks after: "+clickedChar[0].clicks )
         //make a tempArr with all characters except the one clicked and then push the clickedChar with updated #clicks into it
         let tempArr = this.state.char.filter(object => object.id !== id);
         tempArr.push(clickedChar);
         //set state char to the tempArr with updated clicks
         this.setState({char: tempArr});
+        console.log("----------");
+        console.log(this.state.char);
         if(clickedChar[0].clicks === 1){
             this.setState({score: this.state.score +1}); 
         }
-        else{            
+        else{
+            const newchar = Characters.forEach(element => {
+                element.clicks =0;
+            });          
             this.setState({
                 score: 0, 
-                char: Characters
+                char: newchar
             });
-            console.log(Characters);
+            console.log("----------");
+            console.log(newchar);
         }      
         this.shuffle();
     }
