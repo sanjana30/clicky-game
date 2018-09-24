@@ -78,6 +78,7 @@ class App1 extends React.Component {
                         image={character.image}
                         fontcolor={character.color}
                         changescore={this.handlescore}
+                        house = {character.house}
                     />
                 ))}
             </Wrapper>

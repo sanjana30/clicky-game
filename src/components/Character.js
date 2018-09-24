@@ -8,13 +8,17 @@ let Character = (props) => {
             margin: 30
         },
         spanstyle: {
-            color: props.fontcolor
+            color: props.fontcolor,
+            fontWeight: "bolder"
+        },
+        cardbodystyle : {
+            background: "#D3D3D3"
         }
     }
     return (
         <div className="card" style={styles.cardstyle}>
             <img className="card-img-top" src={props.image} alt={props.name} />
-                <div className="card-body">
+                <div className="card-body" style={styles.cardbodystyle}>
                     <p className="card-text">
                     Name: <span style={styles.spanstyle}>{props.name}</span>
                     <br />
